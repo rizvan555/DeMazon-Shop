@@ -19,7 +19,7 @@ const LayoutStyled = styled.section`
   }
   img {
     width: 20vw;
-    height: 30vh;
+    height: 40vh;
   }
 `;
 
