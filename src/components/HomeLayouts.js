@@ -34,9 +34,9 @@ const HomeLayouts = () => {
   }, []);
   return (
     <LayoutStyled>
-      {products.map((product) => {
+      {products.map((product, index) => {
         return (
-          <div className="layout-box">
+          <div className="layout-box" key={index}>
             <h5>{product.title}</h5>
             <img src={product.image} alt="image" />
           </div>

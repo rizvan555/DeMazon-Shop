@@ -23,8 +23,12 @@ const Navbar = () => {
   return (
     <NavStyled>
       <ul>
-        {navbar.map((nav) => {
-          return <Link to={`/${nav}`}>{nav}</Link>;
+        {navbar.map((nav, index) => {
+          return (
+            <Link key={index} to={`/${nav}`}>
+              {nav}
+            </Link>
+          );
         })}
       </ul>
     </NavStyled>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import SearchResult from "./SearchResult";
 
 const HeaderStyled = styled.header`
   .top-container {
@@ -16,29 +17,14 @@ const HeaderStyled = styled.header`
       font-size: 40px;
       font-weight: bold;
     }
-    .search-box {
-      display: flex;
-      align-items: center;
-      input {
-        width: 25vw;
-        height: 4.8vh;
-        border-radius: 5px 0 0 5px;
-        border: none;
-      }
-      button {
-        width: 6vw;
-        height: 5vh;
-        border-radius: 5px;
-        border: none;
-        border-radius: 0 5px 5px 0;
-        background-color: orange;
-      }
-    }
   }
 `;
 
 const Header = () => {
   const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
+  const [filtered, setFiltered] = useState(null);
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -47,14 +33,13 @@ const Header = () => {
       });
   }, []);
 
-  const [search, setSearch] = useState("");
-  const handleSearch = (event) => {
-    setSearch(event.target.value);
+  const handleSearchClick = () => {
+    if (products !== null) {
+      const product = products.find((product) => product.title === search);
+      setFiltered(product);
+      console.log(product);
+    }
   };
-
-  const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(search.toLowerCase())
-  );
 
   return (
     <HeaderStyled>
@@ -64,10 +49,7 @@ const Header = () => {
             DeMazon
           </Link>
         </div>
-        <div className="search-box">
-          <input type="text" placeholder=" Search" onChange={handleSearch} />
-          <button>Search</button>
-        </div>
+        <SearchResult />
         <Navbar />
       </div>
     </HeaderStyled>
