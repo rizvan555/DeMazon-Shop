@@ -8,7 +8,7 @@ const HeaderStyled = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(0, 0, 0, 0.4);
+    background-color: rgb(0, 0, 0, 0.9);
     color: #fff;
     .title {
       text-decoration: none;
@@ -26,7 +26,7 @@ const HeaderStyled = styled.header`
         border: none;
       }
       button {
-        width: 5vw;
+        width: 6vw;
         height: 5vh;
         border-radius: 5px;
         border: none;

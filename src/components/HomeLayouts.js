@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import Header from "./Header";
-import { Accordion } from "react-bootstrap";
 
 const LayoutStyled = styled.section`
   display: grid;
