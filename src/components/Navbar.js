@@ -10,7 +10,7 @@ const NavStyled = styled.nav`
     a {
       text-decoration: none;
       color: #fff;
-      font-size: 20px;
+      font-size: 15px;
     }
     a:hover {
       font-weight: bold;
