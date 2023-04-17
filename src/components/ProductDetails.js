@@ -9,18 +9,26 @@ const DetailsStyled = styled.div`
   align-items: center;
   margin: 0 auto;
   height: 100vh;
-  gap: 5vw;
+  gap: 8vw;
   img {
-    width: 20vw;
+    width: 30vw;
   }
   .info-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50vw;
+    width: 40vw;
     span {
       font-weight: bold;
       font-size: 30px;
+    }
+    h2 {
+      font-size: 40px;
+    }
+    h6 {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 30px;
     }
   }
 `;
@@ -58,7 +66,7 @@ const ProductDetails = (props) => {
             <div className="info-box">
               <h2>{idCheck.title}</h2>
               <h6>{idCheck.description}</h6>
-              <p>⭐️ {idCheck.rating.rate}</p>
+              <p>⭐️⭐️⭐️⭐️⭐️ {idCheck.rating.rate}</p>
               <span>€ {idCheck.price}</span>
             </div>
           </DetailsStyled>

@@ -15,7 +15,7 @@ const ItemStyled = styled.div`
     text-align: center;
   }
   img {
-    width: 10vw;
+    width: 12vw;
     height: 25vh;
   }
   p {
@@ -35,7 +35,7 @@ const ProductItem = (props) => {
       <ItemStyled onClick={() => handleItemClick(props.id)}>
         <img src={props.image} alt="image" />
         <h3>{props.title}</h3>
-        <span>⭐️{props.rating.rate}</span>
+        <span>⭐️⭐️⭐️⭐️⭐️ {props.rating.rate}</span>
         <div className="price">
           <p>€ {props.price}</p>
         </div>
