@@ -9,7 +9,7 @@ const ListStyled = styled.section`
   margin: 0 auto;
   padding: 20px;
   width: 90vw;
-  column-gap: 10px;
+  gap: 20px;
 `;
 
 const ProductList = () => {

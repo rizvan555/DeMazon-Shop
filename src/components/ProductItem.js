@@ -1,22 +1,27 @@
 import styled from "styled-components";
-import ProductDetails from "./ProductDetails";
 
 const ItemStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
   flex-direction: column;
   border: 1px solid #e3e3e3;
   width: 20vw;
-  height: 100%;
+  height: 50vh;
   background-color: #fff;
+  padding: 10px;
   h3 {
     font-size: 15px;
     text-align: center;
   }
   img {
-    width: 5vw;
+    width: 10vw;
+    height: 25vh;
+  }
+  p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #78040d;
   }
 `;
 
@@ -31,7 +36,9 @@ const ProductItem = (props) => {
         <img src={props.image} alt="image" />
         <h3>{props.title}</h3>
         <span>⭐️{props.rating.rate}</span>
-        <p>€ {props.price}</p>
+        <div className="price">
+          <p>€ {props.price}</p>
+        </div>
       </ItemStyled>
     </>
   );
