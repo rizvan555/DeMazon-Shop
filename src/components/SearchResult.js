@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import Result from "./Result";
 
 const SearchStyled = styled.div`
   display: flex;
@@ -20,6 +19,17 @@ const SearchStyled = styled.div`
     background-color: orange;
   }
 `;
+const ResultStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h3 {
+  }
+  img {
+    width: 20vw;
+  }
+`;
 
 const SearchResult = () => {
   const [products, setProducts] = useState(null);
@@ -34,13 +44,9 @@ const SearchResult = () => {
       });
   }, []);
 
-  const handleSearch = (event) => {
-    setSearch(event.target.value);
-  };
-
   const handleSearchClick = () => {
     if (products) {
-      const myProduct = products.find((product) => product.title === search);
+      const myProduct = products.filter((product) => product.title === search);
       setFiltered(myProduct);
     }
   };
@@ -56,13 +62,25 @@ const SearchResult = () => {
         <input
           type="text"
           placeholder=" Search"
-          onChange={handleSearch}
+          onChange={(event) => setSearch(event.target.value)}
           value={search}
           onKeyPress={handleKeyPress}
         />
         <button onClick={handleSearchClick}>Search</button>
       </SearchStyled>
-      {filtered && <Result product={filtered} />}
+      <ResultStyled>
+        {filtered &&
+          filtered.map((product) => {
+            return (
+              <>
+                <img src={product.image} alt="" />
+                <h3>{product.title}</h3>
+                <p>⭐️⭐️⭐️⭐️⭐️ {product.rating.rate}</p>
+                <h6>€ {product.price}</h6>
+              </>
+            );
+          })}
+      </ResultStyled>
     </>
   );
 };
