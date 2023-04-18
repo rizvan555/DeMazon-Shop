@@ -17,8 +17,8 @@ const LayoutStyled = styled.section`
     padding: 10px 20px;
   }
   img {
-    width: 20vw;
-    height: 40vh;
+    width: 17vw;
+    height: 35vh;
   }
 `;
 

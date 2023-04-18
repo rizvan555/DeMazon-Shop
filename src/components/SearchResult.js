@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import ProductItem from "./ProductItem";
+import { useNavigate } from "react-router-dom";
 
 const SearchStyled = styled.div`
   display: flex;
@@ -35,6 +37,7 @@ const SearchResult = () => {
   const [products, setProducts] = useState(null);
   const [search, setSearch] = useState("");
   const [filtered, setFiltered] = useState(null); //axtarisdan sonra alinan neticedir "filtered"
+  const navigator = useNavigate();
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -46,8 +49,8 @@ const SearchResult = () => {
 
   const handleSearchClick = () => {
     if (products) {
-      const myProduct = products.filter((product) => product.title === search);
-      setFiltered(myProduct);
+      const myProduct = products.find((product) => product.title === search);
+      navigator(`/bestseller/${myProduct.id}`);
     }
   };
 
@@ -72,12 +75,16 @@ const SearchResult = () => {
         {filtered &&
           filtered.map((product) => {
             return (
-              <>
-                <img src={product.image} alt="" />
-                <h3>{product.title}</h3>
-                <p>⭐️⭐️⭐️⭐️⭐️ {product.rating.rate}</p>
-                <h6>€ {product.price}</h6>
-              </>
+              <div key={product.id}>
+                <ProductItem
+                  title={product.title}
+                  image={product.image}
+                  rating={product.rating}
+                  price={product.price}
+                  id={product.id}
+                  description={product.description}
+                />
+              </div>
             );
           })}
       </ResultStyled>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import "animate.css";
 
 const NavStyled = styled.nav`
   ul {

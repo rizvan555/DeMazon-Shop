@@ -1,0 +1,23 @@
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: white;
+  height: 20vh;
+}
+
+.carousel-item img {
+  margin: 2vh auto 5vh auto;
+  max-width: 12vw;
+  max-height: 17vh;
+  padding: 20px;
+}
+
+.carousel-caption h3 {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 300px;
+  color: #000;
+  font-size: 20px;
+}

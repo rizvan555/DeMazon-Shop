@@ -29,7 +29,6 @@ const ProductItem = (props) => {
   const handleItemClick = (id) => {
     window.location.href = `/bestseller/${props.id}`;
   };
-
   return (
     <>
       <ItemStyled onClick={() => handleItemClick(props.id)}>

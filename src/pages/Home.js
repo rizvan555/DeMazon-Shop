@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Header from "../components/Header";
 import HomeLayouts from "../components/HomeLayouts";
+import Carousel from "../components/CarouselComp";
+import CarouselComp from "../components/CarouselComp";
 
 const HomeStyled = styled.div`
   background: rgb(255, 255, 255);
@@ -14,6 +16,7 @@ const Home = () => {
   return (
     <HomeStyled>
       <Header />
+      <CarouselComp />
       <HomeLayouts />
     </HomeStyled>
   );
