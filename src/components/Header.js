@@ -9,7 +9,7 @@ const HeaderStyled = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(0, 0, 0, 0.9);
+    background-color: rgb(0, 0, 0, 0.5);
     color: #fff;
     .title {
       text-decoration: none;
