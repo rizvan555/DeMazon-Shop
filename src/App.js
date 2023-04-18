@@ -8,6 +8,10 @@ import Prime from "./pages/Prime";
 import Contact from "./pages/Contact";
 import ProductDetails from "./components/ProductDetails";
 import styled from "styled-components";
+import MensClothing from "./components/Categories/MensClothing";
+import WomensClothing from "./components/Categories/WomensClothing";
+import Jewelery from "./components/Categories/Jewelery";
+import Electronics from "./components/Categories/Electronics";
 
 const AppStyled = styled.div``;
 
@@ -23,6 +27,10 @@ function App() {
         <Route path="/prime" element={<Prime />}></Route>
         <Route path="/service" element={<CustomerService />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/mensClothing" element={<MensClothing />}></Route>
+        <Route path="/womensClothing" element={<WomensClothing />}></Route>
+        <Route path="/jewelery" element={<Jewelery />}></Route>
+        <Route path="/electronics" element={<Electronics />}></Route>
       </Routes>
     </AppStyled>
   );

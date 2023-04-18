@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LayoutStyled = styled.section`
   display: grid;
@@ -21,9 +23,21 @@ const LayoutStyled = styled.section`
     height: 35vh;
   }
 `;
+const TitleStyled = styled.div`
+  display: flex;
+  color: #fff;
+  font-weight: bold;
+  font-size: 30px;
+  border-bottom: 1px solid #fff;
+  width: 80vw;
+  padding: 10px;
+  margin: 20px;
+`;
 
 const HomeLayouts = () => {
   const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState("");
+  const navigator = useNavigate();
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -32,17 +46,46 @@ const HomeLayouts = () => {
         setProducts(json);
       });
   }, []);
+
+  const handleClick = (productCategory) => {
+    if (productCategory === "men's clothing") {
+      navigator("/mensClothing");
+    } else if (productCategory === "jewelery") {
+      navigator("/jewelery");
+    } else if (productCategory === "electronics") {
+      navigator("/electronics");
+    } else if (productCategory === "women's clothing") {
+      navigator("/womensClothing");
+    }
+  };
+
   return (
-    <LayoutStyled>
-      {products.map((product, index) => {
-        return (
-          <div className="layout-box" key={index}>
-            <h5>{product.title}</h5>
-            <img src={product.image} alt="image" />
-          </div>
-        );
-      })}
-    </LayoutStyled>
+    <>
+      <TitleStyled>Most Popular Products</TitleStyled>
+      <LayoutStyled>
+        {products.map((product, index) => {
+          return (
+            <div
+              className="layout-box"
+              key={index}
+              onClick={() => handleClick(product.category)}
+            >
+              <p>
+                {product.category === "men's clothing" ? "Men's clothing" : ""}
+              </p>
+              <p>{product.category === "jewelery" ? "Jewelry" : ""}</p>
+              <p>{product.category === "electronics" ? "Electronics" : ""}</p>
+              <p>
+                {product.category === "women's clothing"
+                  ? "Women's clothing"
+                  : ""}
+              </p>
+              <img src={product.image} alt="image" />
+            </div>
+          );
+        })}
+      </LayoutStyled>
+    </>
   );
 };
 

@@ -8,13 +8,13 @@
 }
 
 .carousel-item img {
-  margin: 2vh auto 5vh auto;
+  margin: 5vh auto 5vh auto;
   max-width: 12vw;
-  max-height: 18vh;
+  max-height: 22vh;
   padding: 20px;
 }
 
-.carousel-caption h3 {
+.carousel-caption h2 {
   object-fit: contain;
   max-width: 100%;
   max-height: 300px;
