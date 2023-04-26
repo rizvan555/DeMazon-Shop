@@ -14,7 +14,7 @@ const HeaderStyled = styled.header`
     .title {
       text-decoration: none;
       color: #fff;
-      font-size: 40px;
+      font-size: 45px;
       font-weight: bold;
     }
   }
@@ -44,11 +44,9 @@ const Header = () => {
   return (
     <HeaderStyled>
       <div className="top-container">
-        <div className="title">
-          <Link className="title" to="/">
-            DeMazon
-          </Link>
-        </div>
+        <Link className="title" to="/">
+          DeMazon
+        </Link>
         <SearchResult />
         <Navbar />
       </div>
