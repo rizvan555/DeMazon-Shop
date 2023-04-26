@@ -6,12 +6,12 @@ const NavStyled = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    gap: 4vw;
+    gap: 1vw;
     padding: 30px;
     a {
       text-decoration: none;
       color: #fff;
-      font-size: 17px;
+      font-size: 13px;
     }
     a:hover {
       font-weight: bold;

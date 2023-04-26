@@ -10,8 +10,14 @@ const DetailsStyled = styled.div`
   margin: 0 auto;
   height: 100vh;
   gap: 8vw;
-  img {
-    width: 30vw;
+  background-color: #e1e1e1;
+  .image {
+    padding: 20px 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: #fff;
+    img {
+      width: 25vw;
+    }
   }
   .info-box {
     display: flex;
@@ -20,15 +26,19 @@ const DetailsStyled = styled.div`
     width: 40vw;
     span {
       font-weight: bold;
-      font-size: 30px;
+      font-size: 15px;
     }
     h2 {
-      font-size: 40px;
+      font-size: 25px;
     }
     h6 {
-      font-size: 15px;
+      font-size: 10px;
       font-weight: 300;
-      line-height: 30px;
+      line-height: 20px;
+      margin-top: 30px;
+    }
+    p {
+      font-size: 10px;
     }
   }
 `;
@@ -62,7 +72,9 @@ const ProductDetails = (props) => {
       {idChecker.map((idCheck) => {
         return (
           <DetailsStyled>
-            <img src={idCheck.image} alt="" />
+            <div className="image">
+              <img src={idCheck.image} alt="" />
+            </div>
             <div className="info-box">
               <h2>{idCheck.title}</h2>
               <h6>{idCheck.description}</h6>

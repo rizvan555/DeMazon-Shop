@@ -5,11 +5,12 @@ import Header from "./Header";
 
 const ListStyled = styled.section`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin: 0 auto;
+  text-align: center;
   padding: 20px;
-  width: 90vw;
-  gap: 20px;
+  width: 98vw;
+  gap: 15px;
 `;
 
 const ProductList = () => {

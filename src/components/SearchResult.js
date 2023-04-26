@@ -11,6 +11,9 @@ const SearchStyled = styled.div`
     height: 4.8vh;
     border-radius: 5px 0 0 5px;
     border: none;
+    ::placeholder {
+      font-size: 10px;
+    }
   }
   button {
     width: 6vw;
@@ -19,6 +22,7 @@ const SearchStyled = styled.div`
     border: none;
     border-radius: 0 5px 5px 0;
     background-color: orange;
+    font-size: 10px;
   }
 `;
 const ResultStyled = styled.div`
